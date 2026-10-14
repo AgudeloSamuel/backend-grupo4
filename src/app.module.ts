@@ -4,6 +4,10 @@ import { ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { AppController } from './app.controller.js';
 import { AppService } from './app.service.js';
+import { PatogenosModule } from './modules/patogenos/patogenos.module.js'; 
+import { TratamientosModule } from './modules/tratamientos/tratamientos.module.js';
+import { EnfermedadesModule } from './modules/enfermedades/enfermedades.module.js';
+
 
 @Module({
   imports: [
@@ -21,6 +25,9 @@ import { AppService } from './app.service.js';
         synchronize: true,
       }),
     }),
+    PatogenosModule,
+    EnfermedadesModule,
+    TratamientosModule,
   ],
   controllers: [AppController],
   providers: [AppService],
